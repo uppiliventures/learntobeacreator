@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Learn To Be A Creator — Make. Publish. Learn. Iterate.</title>
+  <meta name="description" content="Practical guides and execution systems for people ready to stop planning and start creating content.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #111111;
+      --grey: #666666;
+      --light-grey: #e9e9e7;
+      --off-white: #f7f7f5;
+      --white: #ffffff;
+      --serif: "Libre Baskerville", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+    nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--light-grey);
+    }
+
+    .logo {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--grey);
+    }
+
+    .nav-links a:hover {
+      color: var(--black);
+    }
+
+    .nav-button {
+      color: var(--black);
+      border: 1px solid var(--black);
+      padding: 9px 17px;
+      border-radius: 100px;
+      transition: 0.2s ease;
+    }
+
+    .nav-button:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      padding: 100px 0;
+    }
+
+    .hero-inner {
+      max-width: 920px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--grey);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(44px, 6.5vw, 82px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      max-width: 900px;
+    }
+
+    .hero-copy {
+      margin-top: 32px;
+      max-width: 610px;
+      font-size: 20px;
+      line-height: 1.55;
+      color: var(--grey);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: 42px;
+    }
+
+    .primary-button {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 15px 28px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .text-link {
+      font-size: 14px;
+      color: var(--grey);
+    }
+
+    .text-link:hover {
+      color: var(--black);
+    }
+
+    /* MANIFESTO */
+    .manifesto {
+      background: var(--off-white);
+      padding: 120px 0;
+    }
+
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+    }
+
+    .section-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--grey);
+    }
+
+    .manifesto h2 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.8vw, 50px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .manifesto p {
+      margin-top: 24px;
+      max-width: 680px;
+      color: var(--grey);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .manifesto em {
+      font-style: italic;
+      color: var(--black);
+    }
+
+    /* METHOD */
+    .method {
+      padding: 120px 0;
+    }
+
+    .method-header {
+      max-width: 650px;
+      margin-bottom: 70px;
+    }
+
+    .method-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4.5vw, 58px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      margin-top: 18px;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--light-grey);
+    }
+
+    .method-card {
+      padding: 38px 25px 20px 0;
+      border-right: 1px solid var(--light-grey);
+    }
+
+    .method-card:not(:first-child) {
+      padding-left: 25px;
+    }
+
+    .method-card:last-child {
+      border-right: none;
+    }
+
+    .method-number {
+      font-size: 13px;
+      color: var(--grey);
+      margin-bottom: 40px;
+    }
+
+    .method-card h3 {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    .method-card p {
+      color: var(--grey);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* PRODUCT */
+    .product {
+      background: var(--black);
+      color: var(--white);
+      padding: 120px 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .product h2 {
+      font-family: var(--serif);
+      font-size: clamp(38px, 4.5vw, 60px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      margin-top: 18px;
+    }
+
+    .product-description {
+      color: #b5b5b5;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-top: 24px;
+      max-width: 600px;
+    }
+
+    .product-list {
+      margin-top: 35px;
+      list-style: none;
+      border-top: 1px solid #2a2a2a;
+    }
+
+    .product-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid #2a2a2a;
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    .product-price {
+      border: 1px solid #333333;
+      padding: 48px;
+      background: #161616;
+      border-radius: 4px;
+    }
+
+    .price {
+      font-family: var(--serif);
+      font-size: 64px;
+      line-height: 1;
+    }
+
+    .price-note {
+      color: #888888;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .product-button {
+      display: block;
+      background: var(--white);
+      color: var(--black);
+      text-align: center;
+      padding: 16px;
+      border-radius: 100px;
+      margin-top: 32px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity 0.2s ease;
+    }
+
+    .product-button:hover {
+      opacity: 0.88;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 45px 0;
+      border-top: 1px solid var(--light-grey);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--grey);
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .method-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .method-card:nth-child(2) {
+        border-right: none;
+      }
+      .method-card:nth-child(3), .method-card:nth-child(4) {
+        border-top: 1px solid var(--light-grey);
+        padding-left: 0;
+      }
+      .method-card:nth-child(4) {
+        padding-left: 25px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 32px, 1160px);
+      }
+
+      nav {
+        height: 70px;
+      }
+
+      .nav-links a:not(.nav-button) {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 70px 0 90px;
+      }
+
+      h1 {
+        font-size: clamp(40px, 12vw, 60px);
+      }
+
+      .hero-copy {
+        font-size: 18px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .manifesto, .method, .product {
+        padding: 80px 0;
+      }
+
+      .manifesto-grid, .product-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .method-card, .method-card:not(:first-child) {
+        border-right: none;
+        border-bottom: 1px solid var(--light-grey);
+        padding: 30px 0;
+      }
+
+      .method-card:last-child {
+        border-bottom: none;
+      }
+
+      .method-number {
+        margin-bottom: 20px;
+      }
+
+      .product-price {
+        padding: 32px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <nav>
+      <a href="/" class="logo">LEARN TO BE A CREATOR</a>
+
+      <div class="nav-links">
+        <a href="#method">Method</a>
+        <a href="#kit">The Doers Kit</a>
+        <a href="#kit" class="nav-button">Get The Kit</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+
+          <div class="eyebrow">Learn by doing</div>
+
+          <h1>
+            You don't become a creator by waiting.<br>
+            You become one by making.
+          </h1>
+
+          <p class="hero-copy">
+            A practical 30-day framework for people ready to stop overthinking, bypass guru hype, and publish their first work.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#kit" class="primary-button">
+              Get The Doers Kit — $27
+            </a>
+
+            <a href="#method" class="text-link">
+              Read the philosophy →
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto">
+      <div class="container">
+
+        <div class="manifesto-grid">
+
+          <div>
+            <div class="section-label">The Philosophy</div>
+          </div>
+
+          <div>
+            <h2>
+              You don't need to become an expert before you begin.
+            </h2>
+
+            <p>
+              Most people spend months trapped in preparation. Watching endless tutorials. Comparing camera gear. Designing logos. Waiting until they feel "ready."
+            </p>
+
+            <p>
+              <em>You learn by publishing, not by planning.</em> Start small. Put version 1.0 into the world. Learn from the real signal, and make version 2.0 slightly better.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- METHOD -->
+    <section class="method" id="method">
+      <div class="container">
+
+        <div class="method-header">
+          <div class="section-label">The Framework</div>
+          <h2>Make. Publish. Learn. Iterate.</h2>
+        </div>
+
+        <div class="method-grid">
+
+          <div class="method-card">
+            <div class="method-number">01</div>
+            <h3>Make.</h3>
+            <p>Stop planning forever. Pick one idea using our 15-minute matrix and draft your first piece of content today.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="method-number">02</div>
+            <h3>Publish.</h3>
+            <p>Ship it. Overcome perfectionism and hit send. Creation only counts once it leaves your draft folder.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="method-number">03</div>
+            <h3>Learn.</h3>
+            <p>Look at real signals. What clicked? Where did viewers drop off? What did you discover by actually doing it?</p>
+          </div>
+
+          <div class="method-card">
+            <div class="method-number">04</div>
+            <h3>Iterate.</h3>
+            <p>Apply one single 1% improvement to your next piece. Repeat the loop and watch momentum build.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRODUCT -->
+    <section class="product" id="kit">
+      <div class="container">
+
+        <div class="product-grid">
+
+          <div>
+            <div class="section-label">The Execution System</div>
+
+            <h2>The Doers Kit</h2>
+
+            <p class="product-description">
+              The First 30: A daily action guide designed to take you from overthinking to your first 3 published pieces of content in 30 days. No 100-page manuals. Just daily momentum.
+            </p>
+
+            <ul class="product-list">
+              <li>The 30-Day Daily Action Roadmap</li>
+              <li>15-Minute Niche & Topic Selector Matrix</li>
+              <li>5 Minimalist Content Outlines</li>
+              <li>Pre-Flight Publishing Checklist</li>
+              <li>The 1% Iteration & Analytics Log</li>
+              <li>Lifetime Access + Future Updates</li>
+            </ul>
+          </div>
+
+          <div class="product-price">
+            <div class="price">$27</div>
+            <div class="price-note">One-time purchase · Instant access</div>
+
+            <a href="YOUR_GUMROAD_OR_LEMONSQUEEZY_LINK" class="product-button">
+              Get The Doers Kit
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div class="container">
+    <footer>
+      <div class="footer-inner">
+        <div>© 2026 Learn To Be A Creator · A project by Unrealised</div>
+        <div>Make. Publish. Learn. Iterate.</div>
+      </div>
+    </footer>
+  </div>
