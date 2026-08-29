@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Learn To Be A Creator — Make. Publish. Learn. Iterate.</title>
-  <meta name="description" content="Practical guides and execution systems for people ready to stop planning and start creating content.">
+  <meta name="description" content="A 30-day execution manual for content creators ready to stop overthinking, bypass guru hype, and publish on YouTube.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Payhip Integration Script -->
+  <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
 
   <style>
     :root {
@@ -197,6 +200,62 @@
     .manifesto em {
       font-style: italic;
       color: var(--black);
+    }
+
+    /* CREDIBILITY / ANTI-GURU */
+    .credibility {
+      padding: 120px 0;
+      border-bottom: 1px solid var(--light-grey);
+    }
+
+    .credibility-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+    }
+
+    .credibility h2 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.8vw, 50px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .credibility-lead {
+      font-size: 20px;
+      line-height: 1.6;
+      color: var(--black);
+      margin-top: 24px;
+    }
+
+    .credibility p {
+      margin-top: 18px;
+      color: var(--grey);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .credibility-bullets {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      border-top: 1px solid var(--light-grey);
+      padding-top: 32px;
+    }
+
+    .cred-item strong {
+      display: block;
+      font-size: 15px;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .cred-item p {
+      font-size: 13px;
+      line-height: 1.6;
+      margin-top: 0;
     }
 
     /* METHOD */
@@ -398,13 +457,18 @@
         align-items: flex-start;
       }
 
-      .manifesto, .method, .product {
+      .manifesto, .credibility, .method, .product {
         padding: 80px 0;
       }
 
-      .manifesto-grid, .product-grid {
+      .manifesto-grid, .credibility-grid, .product-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+      }
+
+      .credibility-bullets {
+        grid-template-columns: 1fr;
+        gap: 24px;
       }
 
       .method-grid {
@@ -446,8 +510,7 @@
 
       <div class="nav-links">
         <a href="#method">Method</a>
-        <a href="#kit">The Doers Kit</a>
-        <a href="#kit" class="nav-button">Get The Kit</a>
+        <a href="#book" class="nav-button">Get Book One</a>
       </div>
     </nav>
   </div>
@@ -467,12 +530,12 @@
           </h1>
 
           <p class="hero-copy">
-            A practical 30-day framework for people ready to stop overthinking, bypass guru hype, and publish their first work.
+            A practical 30-day execution manual for people ready to stop overthinking, bypass guru hype, and publish on YouTube.
           </p>
 
           <div class="hero-actions">
-            <a href="#kit" class="primary-button">
-              Get The Doers Kit — $27
+            <a href="https://payhip.com/b/uXT1W" class="payhip-buy-button primary-button">
+              Get Book One — £24.99
             </a>
 
             <a href="#method" class="text-link">
@@ -500,7 +563,7 @@
             </h2>
 
             <p>
-              Most people spend months trapped in preparation. Watching endless tutorials. Comparing camera gear. Designing logos. Waiting until they feel "ready."
+              Most people spend months trapped in preparation. Watching endless tutorials. Comparing camera gear. Designing logos. Writing ideas for videos they will never make.
             </p>
 
             <p>
@@ -511,6 +574,49 @@
 
         </div>
 
+      </div>
+    </section>
+
+    <!-- CREDIBILITY / ANTI-GURU -->
+    <section class="credibility">
+      <div class="container">
+        <div class="credibility-grid">
+
+          <div>
+            <div class="section-label">No Guru Hype</div>
+          </div>
+
+          <div>
+            <h2>I’ve been publishing online since 2009. Here’s what nobody tells you.</h2>
+
+            <p class="credibility-lead">
+              I uploaded my first YouTube video in 2009. Over the last 17+ years, I’ve watched algorithms mutate, gear get cheaper, and "gurus" invent 100-step formulas to sell you £1,000 courses.
+            </p>
+
+            <p>
+              Here is the truth: <strong>90% of those course frameworks exist solely to justify a high price tag.</strong> You don't need a £2,000 setup, a bloated Notion template, or a complex 6-month launch plan. You just need momentum.
+            </p>
+
+            <div class="credibility-bullets">
+              <div class="cred-item">
+                <strong>01. Low friction beats high production</strong>
+                <p>If your editing or recording setup takes more than a few minutes to prep, you won't publish. Keep it minimal.</p>
+              </div>
+
+              <div class="cred-item">
+                <strong>02. Done is better than perfect</strong>
+                <p>A published C-minus video beats an unreleased A-plus draft sitting on your computer every single time.</p>
+              </div>
+
+              <div class="cred-item">
+                <strong>03. Drafts don't count</strong>
+                <p>Creation only counts once it leaves your hard drive. YouTube cannot index an offline draft.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -528,13 +634,13 @@
           <div class="method-card">
             <div class="method-number">01</div>
             <h3>Make.</h3>
-            <p>Stop planning forever. Pick one idea using our 15-minute matrix and draft your first piece of content today.</p>
+            <p>Stop planning forever. Pick one idea using the Ikigai topic matrix and draft your first video outline today.</p>
           </div>
 
           <div class="method-card">
             <div class="method-number">02</div>
             <h3>Publish.</h3>
-            <p>Ship it. Overcome perfectionism and hit send. Creation only counts once it leaves your draft folder.</p>
+            <p>Ship it. Overcome perfectionism and hit upload. Creation only counts once it leaves your hard drive.</p>
           </div>
 
           <div class="method-card">
@@ -555,36 +661,38 @@
     </section>
 
     <!-- PRODUCT -->
-    <section class="product" id="kit">
+    <section class="product" id="book">
       <div class="container">
 
         <div class="product-grid">
 
           <div>
-            <div class="section-label">The Execution System</div>
+            <div class="section-label">Book One — Execution Manual</div>
 
-            <h2>The Doers Kit</h2>
+            <h2>How To YouTube</h2>
 
             <p class="product-description">
-              The First 30: A daily action guide designed to take you from overthinking to your first 3 published pieces of content in 30 days. No 100-page manuals. Just daily momentum.
+              A 30-day action manual designed to take you from overthinking to your first 3 published videos on YouTube. No guru fluff. Just daily momentum.
             </p>
 
             <ul class="product-list">
-              <li>The 30-Day Daily Action Roadmap</li>
-              <li>15-Minute Niche & Topic Selector Matrix</li>
-              <li>5 Minimalist Content Outlines</li>
+              <li>The Anti-Guru Manifesto & Rules of Delivery</li>
+              <li>The 15-Minute Ikigai Niche Matrix</li>
+              <li>Mastering Packaging (Titles & Thumbnails)</li>
+              <li>The 30-Day YouTube Launch Challenge</li>
+              <li>Scripting & Retention Frameworks</li>
               <li>Pre-Flight Publishing Checklist</li>
-              <li>The 1% Iteration & Analytics Log</li>
-              <li>Lifetime Access + Future Updates</li>
+              <li>The Monetisation Engine & 1% Iteration Log</li>
+              <li>Lifetime Access + Instant PDF Download</li>
             </ul>
           </div>
 
           <div class="product-price">
-            <div class="price">$27</div>
-            <div class="price-note">One-time purchase · Instant access</div>
+            <div class="price">£24.99</div>
+            <div class="price-note">One-time purchase · Instant PDF download</div>
 
-            <a href="YOUR_GUMROAD_OR_LEMONSQUEEZY_LINK" class="product-button">
-              Get The Doers Kit
+            <a href="https://payhip.com/b/uXT1W" class="payhip-buy-button product-button">
+              Get Book One — £24.99
             </a>
           </div>
 
@@ -599,8 +707,11 @@
   <div class="container">
     <footer>
       <div class="footer-inner">
-        <div>© 2026 Learn To Be A Creator · A project by Unrealised</div>
+        <div>© 2026 Learn To Be A Creator · A project by Unrealised Books</div>
         <div>Make. Publish. Learn. Iterate.</div>
       </div>
     </footer>
   </div>
+
+</body>
+</html>
